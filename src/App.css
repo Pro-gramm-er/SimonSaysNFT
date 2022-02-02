@@ -145,9 +145,9 @@ body {
   line-height: 64px;
   margin: 0 0 18px;
   text-shadow: 1px 0 0 #fff;
-  position: absolute;
+  position: relative;
   left: 50%;
-  top: 40%;
+  top: 35%;
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   width: 100%;
@@ -164,13 +164,13 @@ body {
   text-align: center;
   cursor: pointer;
   white-space: nowrap;
-  position: absolute;
+  position: relative;
+  display: block;
   left: 50%;
-  top: 53%;
+  top: 28%;
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
 }
-
 .glow-on-hover {
   width: 220px;
   height: 50px;

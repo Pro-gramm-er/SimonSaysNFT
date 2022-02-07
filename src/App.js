@@ -48,8 +48,6 @@ function App() {
 
   function checkAnswer(currentLevel) {
     if (isStarted && !isLost) {
-      console.log("user " + currentGameState.userClickedPattern);
-      console.log("game " + currentGameState.gamePattern);
       if (
         currentGameState.gamePattern[currentLevel] ==
         currentGameState.userClickedPattern[currentLevel]
@@ -70,7 +68,7 @@ function App() {
     }
   }
 
-  function onClick() {}
+  function onClick() { }
 
   function handleStart() {
     setIsStarted(true);
@@ -102,7 +100,6 @@ function App() {
       setIsLost(false);
       nextSequence();
     } else {
-      console.log("game over");
     }
   }, [isStarted]);
 
@@ -112,7 +109,6 @@ function App() {
     return async () => {
       try {
         const connector = connectors[connectorId];
-        console.log("console log ul lor : " + connector);
 
         if (connector.walletConnectProvider?.wc?.uri) {
           connector.walletConnectProvider = undefined;
@@ -123,7 +119,6 @@ function App() {
 
         setUserDomain(connector.uauth.store.storage["uauth-default-username"]);
         const NFTs = await moralisConnector.moralisStartAndGetNFTs(account);
-        console.log(NFTs);
         const NftArray = NFTs.result;
         for (let i = 0; i < NftArray.length; i++) {
           const metaDataJson = JSON.parse(NftArray[i].metadata);
@@ -134,7 +129,6 @@ function App() {
         for (let i = 0; i < 4; i++) {
           randomChosenImages.push(getRandomNftImage());
         }
-        console.log(randomChosenImages);
       } catch (error) {
         console.error(error);
       }
@@ -154,7 +148,6 @@ function App() {
       let indexImage = Math.floor(Math.random() * imagesArray.length);
       let imageUrl = imagesArray[indexImage];
       imagesArray.splice(indexImage, 1);
-      console.log("getRandomNft :" + imageUrl);
       return imageUrl;
     }
   }

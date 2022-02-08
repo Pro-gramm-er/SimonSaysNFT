@@ -7,6 +7,7 @@ import connectors from "./connectors.ts";
 import moralisConnector from "./moralisConnector";
 import buttonImageDefault from "./assets/login-default.png";
 import { uauth } from "./connectors";
+// import api from "api";
 
 function App() {
   const [isStarted, setIsStarted] = useState(false);
@@ -105,6 +106,11 @@ function App() {
 
   const { active, account, activate, deactivate } = useWeb3React();
 
+
+
+
+
+
   function createConnectHandler(connectorId) {
     return async () => {
       try {
@@ -119,9 +125,16 @@ function App() {
 
         setUserDomain(connector.uauth.store.storage["uauth-default-username"]);
         const NFTs = await moralisConnector.moralisStartAndGetNFTs(account);
+        console.log(NFTs);
         const NftArray = NFTs.result;
         for (let i = 0; i < NftArray.length; i++) {
+         
           const metaDataJson = JSON.parse(NftArray[i].metadata);
+          
+          if(!metaDataJson){
+            continue;
+          }
+
           if (metaDataJson.image) {
             imagesArray.push(metaDataJson.image);
           }

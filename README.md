@@ -10,7 +10,7 @@ This game was submitted to the Unstoppable Domains bounty.
 
 
 ## Demo of the Unstoppable Domains integration
-- 
+- https://youtu.be/Z2L2CMzBJ3M
 
 ### Person of contact:
 - Discord: Pro-gramm-er#4544
